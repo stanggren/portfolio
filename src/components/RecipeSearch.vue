@@ -112,10 +112,6 @@ section {
         .modal div img {
         height: 10em !important;
     }
-
-    .modal {
-        
-    }
 }
 
 @media (max-width: 1024px){
