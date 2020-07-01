@@ -7,6 +7,7 @@
                     <p style="font-weight:500;">One of my earlier projects working with React. Mainly developed this project to learn the basics of the framework and creating a responsive design.</p>
                     <p style="font-weight:500; margin-top:10px;">Using an API from <a style="text-decoration:none;color:#60a1ac;" href="https://www.edamam.com/">Edamam</a> the user can search recipes and tick off ingredients from each recipe.</p>
                     <p style="font-weight:500; margin-top:10px;">Either visit the recipe search <a style="text-decoration:none;color:#60a1ac;" href="https://stanggren.github.io/recipe-api/">website</a> or check out the GitHub <a style="text-decoration:none;color:#60a1ac;" href="https://github.com/stanggren/recipe-api">repo</a>.</p>
+                    <p @click="showModal = true" class="modal-click show-image" id="show-image" >Show image</p>
                 </div>
                 <div class="link-container">
                     <p class="menu-header">Tools</p>
@@ -27,7 +28,6 @@
         <div class="content-container">
             <div><img src="../assets/recipesearch.png" alt="Dashboard 1"></div>
             <p @click="showModal = true" class="modal-click enlarge-image" >Enlarge image</p>
-            <p @click="showModal = true" class="modal-click show-image" id="show-image" >Show image</p>
         </div>
         <transition name="modalFade" appear>
             <div class="modal-overlay" v-if="showModal" @click="showModal = false"></div>
@@ -103,13 +103,7 @@ section {
         height: 110vh;
     }
 
-    #show-image {
-        margin-left: 20px !important;
-        margin-top:-145px !important;
-        z-index: 90;
-    }
-
-        .modal div img {
+    .modal div img {
         height: 10em !important;
     }
 }
@@ -135,9 +129,9 @@ section {
     }
 
     .show-image{
-        margin-left:60px !important;
-        margin-top:90px;
+        margin-top:20px;
         display: block !important;
+        margin-left:0px !important;
     }
 
     .modal div img {
@@ -157,9 +151,9 @@ section {
 }
 
 .project-info {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     text-transform: initial;
-    font-weight:500;
+    font-weight:600;
     height: 100px;
     opacity:0;
     height:0;
@@ -167,9 +161,9 @@ section {
 }
 
 .project-link {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     text-transform: initial;
-    font-weight:500;
+    font-weight:600;
     height: 100px;
     opacity:0;
     height:0;
@@ -235,10 +229,12 @@ ul {
 
 ul li {
     list-style: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.9em;
     text-transform: initial;
+    opacity: 0.9;
 }
+
 
 .show-image {
     display: none;
@@ -334,6 +330,5 @@ a:hover {
 router-link:hover {
     opacity: 0.6;
 }
-
 
 </style>

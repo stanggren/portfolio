@@ -18,17 +18,6 @@
                             </div>
                         </li>
                     </ul>
-
-
-                    <!-- <p class="menu-header">Projects</p>
-                    <p v-on:click="showProjectInfo" >Analyze dashboard</p>
-                    <p class="collapsed" v-bind:class="{active : isActive}">ABC HEJ HEJ </p>
-                    <p>Recipe search</p>
-                    <p class="collapsed" v-bind:class="{active : isActive}">123 EDF </p>
-                    <p>Weather forecast</p>
-                    <div></div>
-                    <p>Dice game</p>
-                    <div></div> -->
                 </div>
                 <div class="link-container">
                     <p class="menu-header">Skills</p>
@@ -50,19 +39,12 @@
                         <a href="https://github.com/stanggren">GitHub</a>
                         <a href="https://www.linkedin.com/in/andreas-stanggren-6a27a8176/">LinkedIn</a>
                         <a @click="showModal = true">CV</a>
-                        <p style="margin-top:6px;">astanggren@gmail.com</p>
+                        <p>astanggren@gmail.com</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="content-container">
-            <!-- <div class="canvas-container">
-                <canvas class="first-canvas"></canvas>
-                <canvas class="second-canvas"></canvas>
-                <canvas class="third-canvas"></canvas>
-                <canvas class="forth-canvas"></canvas>
-                <h1>AS</h1>
-            </div> -->
         </div>
         <transition name="modalFade" appear>
             <div class="modal-overlay" v-if="showModal" @click="showModal = false"></div>
@@ -171,6 +153,12 @@ section {
     }
 }
 
+ul li {
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+
 .menu-header {
     list-style:none;
     font-family: DejaVu;
@@ -182,7 +170,7 @@ section {
 }
 
 .project-info {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     text-transform: initial;
     font-weight:500;
     height: 100px;
@@ -192,7 +180,7 @@ section {
 }
 
 .project-link {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     text-transform: initial;
     font-weight:500;
     height: 100px;
@@ -203,7 +191,7 @@ section {
 }
 
 .activeInfo {
-    opacity:1;
+    opacity:1 !important;
     height: auto;
     margin-top:8px;
     transform: translate(2%, 0);
@@ -219,6 +207,13 @@ section {
     margin-top:4px;
     transform: translate(2%, 0);
     transition: transform 0.4s linear, opacity 0.4s linear;
+}
+
+.activeLink:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0s linear;
+
 }
 
 .activeTitle {
@@ -245,9 +240,10 @@ section {
 }
 
 .skills p {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.9em;
     text-transform: initial;
+    opacity: 0.9;
 }
 
 .skills a {
@@ -279,40 +275,6 @@ section {
     max-height: 500px;
     display: flex;
     padding: 0px;
-}
-
-.first-canvas{
-    width: 116px;
-    height: 320px;
-    background-color: #c2c1cc;
-    border-radius: 4px;
-    margin-right:10px;
-}
-.second-canvas{
-    width: 116px;
-    height: 320px;
-    background-color: #9b9aa3;
-    z-index:1;
-    border-radius: 4px;
-    margin-right:10px;
-}
-.third-canvas{
-    width: 116px;
-    height: 320px;
-    background-color: #74737a;
-    z-index:5;
-    border-radius: 4px;
-    margin-right: 10px;
-}
-.forth-canvas{
-    width: 116px;
-    height: 320px;
-    background-color: #4d4d51;
-    border-radius: 4px;
-    margin-right:10px;
-}
-
-@keyframes rotateAnim {
 }
 
 .canvas-container {

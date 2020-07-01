@@ -6,7 +6,7 @@
                 <p>A portfolio by Andreas Stanggren</p>
             </div>
             <span></span>
-            <div class="svg_wrapper" id="arrow">
+            <div class="svg_wrapper" id="enter">
                 <router-link style="text-decoration:none; color: #5a5c61;" v-bind:to="'/about'">
                     <p>Click here to enter</p>
                 </router-link>
@@ -26,7 +26,6 @@ export default {
 </script>
 
 <style scoped>
-@import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
 
 * {
     margin-block-start: 0px;
@@ -52,7 +51,6 @@ p {
     font-weight: 600;
     letter-spacing: 1px;
     font-family: DejaVu;
-
 }
 
 span {
@@ -63,11 +61,11 @@ span {
     align-self:center;
 }
 
-#arrow{
+#enter{
     justify-self:baseline;
     align-self: center;
     bottom: 2%;
-    width: 100vw;
+    width: 175px;
     position: absolute;
 }
 
@@ -87,28 +85,4 @@ svg {
     height: 29px;
 
 }
-
-@keyframes arrowAnimation {
-    /* 0% {bottom: 30px;}
-    10% {bottom: 34px;}
-    40% {bottom: 36px;}
-    60% {bottom: 30px;}
-    70% {bottom: 26px;}
-    90% {bottom: 31px;}
-    100% {bottom: 30px;} */
-
-
-    /* 0% {bottom: 20px;}
-    4% {bottom: 28px;}
-    6% {bottom: 32px;}
-    7% {bottom: 20px;}
-    8% {bottom: 16px;}
-    10% {bottom: 20px;}
-    12% {bottom: 18px;}
-    12.5% {bottom: 19.5px;}
-    12.6% {bottom: 20px;} */
-
-
-}
-
 </style>

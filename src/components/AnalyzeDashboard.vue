@@ -9,6 +9,7 @@
                     <p style="font-weight:500; margin-top:10px;">The analyze dashboard went in to production in December 2019 and is being used both by employees and customers of Visit Group.</p>
                     <p style="font-weight:500; margin-top:10px;">My time at Visit Group and working on this project has given me good insight in customer based development within an agile workflow.</p>
                     <p style="font-weight:500; margin-top:10px; font-style:oblique;">Reference is available.</p>
+                    <p @click="showModal = true" class="modal-click show-image" id="show-image" >Show image</p>
                 </div>
                 <div class="link-container">
                     <p class="menu-header">Tools</p>
@@ -33,7 +34,6 @@
         <div class="content-container">
             <div><img src="../assets/dashboard-1.jpg" alt="Dashboard 1"></div>
             <p @click="showModal = true" class="modal-click enlarge-image" >Enlarge image</p>
-            <p @click="showModal = true" class="modal-click show-image" id="show-image" >Show image</p>
             <!-- <div id="bottom"><img src="../assets/dashboard-dp.jpg" alt="Dashboard datepicker"></div>
             <div id="top"><img src="../assets/dashboard-2.jpg" alt="Dashboard 2"></div> -->
         </div>
@@ -107,16 +107,11 @@ section {
     section {
         justify-content: start;
         padding-top:20px;
-        min-height: 110vh;
-        height: 110vh;
+        min-height: 115vh;
+        height: 115vh;
     }
 
-    #show-image {
-        margin-left: 20px !important;
-        margin-top:310px !important;
-    }
-
-        .modal div img {
+    .modal div img {
         height: 10em !important;
     }
 }
@@ -142,8 +137,7 @@ section {
     }
 
     .show-image{
-        margin-left:60px !important;
-        margin-top:90px;
+        margin-top:20px;
         display: block !important;
     }
 
@@ -164,7 +158,9 @@ section {
 }
 
 .project-info {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    /* font-family: Avenir, Helvetica, Arial, sans-serif; */
+  font-family: 'Nunito Sans', sans-serif;
+
     text-transform: initial;
     font-weight:500;
     height: 100px;
@@ -174,7 +170,9 @@ section {
 }
 
 .project-link {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    /* font-family: Avenir, Helvetica, Arial, sans-serif; */
+  font-family: 'Nunito Sans', sans-serif;
+
     text-transform: initial;
     font-weight:500;
     height: 100px;
@@ -242,7 +240,8 @@ ul {
 
 ul li {
     list-style: none;
-    font-weight: 500;
+    font-weight: 600;
+    opacity: 0.9;
     font-size: 0.9em;
     text-transform: initial;
 }
