@@ -3,8 +3,10 @@
         <div class="menu-container">
             <div class="about-text">
                 <div>
-                    <p class="menu-header">About</p>
-                    <p style="font-weight:500;">I'm Andreas Stanggren. A Gothenburg based web developer with main passion in design and neat user interfaces.</p>
+                    <div class="header-container">
+                        <p class="header">I'm Andreas Stanggren - </p>
+                    </div>
+                    <p class="sub-header">A Gothenburg based web developer with main passion in design and neat user interfaces.</p>
                 </div>
                 <div class="link-container">
                     <p class="menu-header">Projects</p>
@@ -13,38 +15,43 @@
                             <p class="title" :class="{ activeTitle : active_el == li.id }">{{li.title}}</p>
                             <div style="display:flex; flex-direction:column;">
                                 <p class="project-info" :class="{ activeInfo : active_el == li.id }">{{li.text}}</p>
-                                    <router-link v-if="li.isRouter" class="project-link" :class="{ activeLink : active_el == li.id }" v-bind:to="li.link">{{li.linkText}}</router-link>
-                                    <a v-else class="project-link" :class="{ activeLink : active_el == li.id }" :href="li.link">{{li.linkText}}</a>
+                                <div v-if="li.isRouter" class="project-link" :class="{ activeLink : active_el == li.id }">
+                                    <router-link class="activeLinkText"  v-bind:to="li.link">{{li.linkText}}</router-link>
+                                </div>
+                                <div v-else class="project-link" :class="{ activeLink : active_el == li.id }">
+                                    <a class="activeLinkText" :href="li.link">{{li.linkText}}</a>
+                                </div>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <div class="link-container">
+                <div class="link-container" style="margin-top:12px!important;">
                     <p class="menu-header">Skills</p>
                     <div class="skills">
-                        <p>JavaScript</p>
-                        <p>Vue.JS</p>
-                        <p>React.JS</p>
-                        <p>HTML</p>
-                        <p>CSS</p>
-                        <p>C#</p>
-                        <p>ASP .NET</p>
-                        <p>GIT</p>
+                        <p style="margin-bottom:8px;">JavaScript</p>
+                        <p style="margin-bottom:8px;">Vue.JS</p>
+                        <p style="margin-bottom:8px;">React.JS</p>
+                        <p style="margin-bottom:8px;">HTML</p>
+                        <p style="margin-bottom:8px;">CSS</p>
+                        <p style="margin-bottom:8px;">C#</p>
+                        <p style="margin-bottom:8px;">ASP .NET</p>
+                        <p style="margin-bottom:8px;">GIT</p>
                         <p>Agile workflow</p>
                     </div>
                 </div>
                 <div class="link-container">
                     <p class="menu-header">Contact</p>
                     <div class="skills">
-                        <a href="https://github.com/stanggren">GitHub</a>
-                        <a href="https://www.linkedin.com/in/andreas-stanggren-6a27a8176/">LinkedIn</a>
-                        <a @click="showModal = true">CV</a>
+                        <a style="margin-bottom:8px;" href="https://github.com/stanggren">GitHub</a>
+                        <a style="margin-bottom:8px;" href="https://www.linkedin.com/in/andreas-stanggren-6a27a8176/">LinkedIn</a>
+                        <a style="margin-bottom:8px;" @click="showModal = true">CV</a>
                         <p>astanggren@gmail.com</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="content-container">
+            <div ><img id="phoneImage" class="aboutImage" src="../assets/leaf2.png" alt="leaf"></div>
         </div>
         <transition name="modalFade" appear>
             <div class="modal-overlay" v-if="showModal" @click="showModal = false"></div>
@@ -103,8 +110,7 @@ section {
 .menu-container {
     width: 100%;
     max-width: 40em;
-    max-height: 500px;
-    height:500px;
+    max-height: 700px;
     display: flex;
     padding: 0px;
 }
@@ -118,27 +124,87 @@ section {
     padding-left:5px;
 }
 
+.header-container {
+    width: fit-content;
+    padding: 5px 5px 5px 5px;
+    letter-spacing: 1px;
+    margin-bottom:10px;
+    animation-iteration-count: 1;
+    background-image: linear-gradient(180deg, transparent 10%, #3f4042 0);
+    background-repeat: no-repeat;
+    background-size: 100% 90%;
+    animation: header-color-change 2s;
+}
+
+.header {
+    font-weight:500; 
+    font-size:2.45em;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(
+    to right,
+    rgb(248,102,56),
+    rgb(248,102,56) 50%,
+    transparent 50%);
+	background-size: 200% 100%;
+    background-position: 0%;
+    animation: header-text-color-change 2s;
+}
+
+@keyframes header-text-color-change {
+    0% {background-position: 100%}
+    100% {background-position: 0%}
+}
+
+@keyframes header-color-change {
+  0% {background-size: 0 90%;}
+  100% {background-size: 100% 90%;}
+}
+
+.sub-header{
+    font-weight:500; 
+    font-size:1.4em;
+}
+
 @media (max-width: 1400px){
-    .about-text{
-        padding-left: 60px;
-    }
+
 }
 
 @media (max-width: 600px){
 
+    .header {
+        font-size: 1.75em!important;
+        letter-spacing: 0px;
+    }
+
+    .sub-header {
+    font-weight:500; 
+    font-size:1.2em;
+    }
+
+    #about-section {
+        height:148vh!important;
+        justify-content:flex-end;
+    }
+
     .menu-container{
-        max-height: 600px;
         height: 100%;
     }
 
     .about-text{
         padding-left: 20px;
-        max-width: 300px;
-        width:300px;
+        max-width: 330px;
     }
     .modal div img {
         height: 20em !important;
     }
+
+    .aboutImage {
+        padding-top:40px;
+    }
+
 }
 
 @media (max-width: 1024px){
@@ -150,6 +216,16 @@ section {
 @media (max-width: 1271px){
         .modal div img {
         height: 30em;
+    }
+
+    section {
+        flex-direction: column-reverse;
+        height:130.5vh;
+    }
+
+    .aboutImage {
+       padding-bottom: 40px;
+        width: 300px!important;
     }
 }
 
@@ -193,14 +269,13 @@ ul li {
 .activeInfo {
     opacity:1 !important;
     height: auto;
-    margin-top:8px;
     transform: translate(2%, 0);
     transition: transform 0.2s linear, opacity 0.4s linear;
 }
 
+
+
 .activeLink {
-    color: #60a1ac;
-    font-weight: 600;
     opacity:1;
     height: auto;
     margin-bottom: 15px;
@@ -209,20 +284,45 @@ ul li {
     transition: transform 0.4s linear, opacity 0.4s linear;
 }
 
-.activeLink:hover {
-    cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0s linear;
+.activeLinkText {
+    text-decoration: none;
+    color: rgb(248,102,56);
+    font-weight: 600;
+    width: fit-content;
+    background-image: linear-gradient(180deg, transparent 90%, rgb(248,102,56) 0);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size .4s ease;
+    font-family: DejaVu;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
 
+.activeLinkText:hover {
+    background-size: 100% 100%;
+    cursor: pointer;
 }
 
 .activeTitle {
-    font-weight: 600;
+    color: rgb(248,102,56);
+    background-image: linear-gradient(180deg, transparent 90%, rgb(248,102,56) 0)!important;
+    background-repeat: no-repeat!important;
+    background-size: 100% 100%!important;
+    transition: color 1s linear;
+}
+
+.title {
+    margin-bottom: 8px;
+    background-image: linear-gradient(180deg, transparent 90%, #5e6064 0);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size .4s ease;
+    width: fit-content;
 }
 
 .title:hover{
     cursor: pointer;
-    opacity: 0.6;
+    background-size: 100% 100%;
 }
 
 .link-container {
@@ -247,16 +347,20 @@ ul li {
 }
 
 .skills a {
-    font-weight: 600;
+    text-decoration: none;
     font-size: 0.9em;
     text-transform: initial;
-    cursor:pointer;
-    text-decoration: none;
-    color: #60a1ac;
+    color: rgb(248,102,56);
+    font-weight: 600;
+    width: fit-content;
+    background-image: linear-gradient(180deg, transparent 90%, rgb(248,102,56) 0);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size .4s ease;
 }
 
 .skills a:hover{
-    opacity: 0.6;
+    background-size: 100% 100%;
     
 }
 
@@ -272,30 +376,11 @@ ul li {
 .content-container {
     width: 100%;
     max-width: 40em;
-    max-height: 500px;
-    display: flex;
     padding: 0px;
 }
 
-.canvas-container {
-    margin-top: -130px;
-    animation-name: canvasAnim;
-
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-}
-
-.canvas-container h1{
-    position: fixed;
-    top: 53%;
-    left: 71.5%;
-    transform: translate(-50%, -50%);
-    z-index: 97;
-    font-size: 18em;
-    color: #F4F3F2;
-    
+.aboutImage {
+    width: 600px;
 }
 
 

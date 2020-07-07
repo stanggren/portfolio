@@ -4,30 +4,31 @@
             <div class="about-text">
                 <div>
                     <p class="menu-header">Recipe search</p>
-                    <p style="font-weight:500;">One of my earlier projects working with React. Mainly developed this project to learn the basics of the framework and creating a responsive design.</p>
-                    <p style="font-weight:500; margin-top:10px;">Using an API from <a style="text-decoration:none;color:#60a1ac;" href="https://www.edamam.com/">Edamam</a> the user can search recipes and tick off ingredients from each recipe.</p>
-                    <p style="font-weight:500; margin-top:10px;">Either visit the recipe search <a style="text-decoration:none;color:#60a1ac;" href="https://stanggren.github.io/recipe-api/">website</a> or check out the GitHub <a style="text-decoration:none;color:#60a1ac;" href="https://github.com/stanggren/recipe-api">repo</a>.</p>
-                    <p @click="showModal = true" class="modal-click show-image" id="show-image" >Show image</p>
+                    <p id="header">One of my first projects working with React.</p>
+                    <p style="font-weight:500; margin-top:10px;">Mainly developed this project to learn the basics of the framework and creating a responsive design.</p>
+                    <p style="font-weight:500; margin-top:10px;">Using an API from <a class="link" href="https://www.edamam.com/">Edamam</a> the user can search recipes and tick off ingredients from each recipe.</p>
+                    <p style="font-weight:500; margin-top:10px;">Either visit the recipe search <a class="link" href="https://stanggren.github.io/recipe-api/">website</a> or check out the GitHub <a class="link" href="https://github.com/stanggren/recipe-api">repo</a>.</p>
+                    <p @click="showModal = true" class="modal-click show-image link" id="show-image" >Show image</p>
                 </div>
                 <div class="link-container">
                     <p class="menu-header">Tools</p>
                     <ul class="tools">
-                        <li>React.JS</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
+                        <li style="margin-bottom:8px;">React.JS</li>
+                        <li style="margin-bottom:8px;">HTML</li>
+                        <li style="margin-bottom:8px;">CSS</li>
                     </ul>
                 </div>
                 <div class="return-container">
                     <router-link style="text-decoration:none; display:flex; flex-direction:row;" v-bind:to="'/about'">
                         <img class="return-img" src="../assets/return.png">
-                        <p class="return-text">return</p>
+                        <p class="return-text link">return</p>
                     </router-link>
                 </div>
             </div>
         </div>
         <div class="content-container">
             <div><img src="../assets/recipesearch.png" alt="Dashboard 1"></div>
-            <p @click="showModal = true" class="modal-click enlarge-image" >Enlarge image</p>
+            <p @click="showModal = true" class="modal-click enlarge-image link" >Enlarge image</p>
         </div>
         <transition name="modalFade" appear>
             <div class="modal-overlay" v-if="showModal" @click="showModal = false"></div>
@@ -92,7 +93,7 @@ section {
 
 @media (max-width: 600px){
     .about-text{
-        padding-left: 20px;
+        padding-left: 25px;
         max-width: 300px;
         width:300px;
     }
@@ -105,6 +106,10 @@ section {
 
     .modal div img {
         height: 10em !important;
+    }
+
+    #header {
+        font-size: 1.2em!important;
     }
 }
 
@@ -138,6 +143,27 @@ section {
         height: 30em;
     }
 
+}
+
+#header {
+    font-weight:500; 
+    font-size: 1.5em;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(248,102,56);
+    font-weight: 600;
+    width: fit-content;
+    background-image: linear-gradient(180deg, transparent 90%, rgb(248,102,56) 0);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size .4s ease;
+}
+
+.link:hover {
+    background-size: 100% 100%;
+    cursor:pointer;
 }
 
 .menu-header {
@@ -180,7 +206,7 @@ section {
 }
 
 .activeLink {
-    color: #60a1ac;
+    color: rgb(248,102,56);
     font-weight: 600;
     opacity:1;
     height: auto;
@@ -192,12 +218,6 @@ section {
 
 .activeTitle {
     font-weight: 600;
-}
-
-.title:hover{
-    cursor: pointer;
-    opacity: 0.6;
-    transition: all 0.1s ease-in;
 }
 
 .link-container {
@@ -241,19 +261,14 @@ ul li {
 }
 
 .modal-click {
-    color:#60a1ac;
     text-transform: uppercase;
     font-family: DejaVu;
     letter-spacing:1px;
     font-weight: 900;
-    font-size: 0.6em;
+    font-size: 0.8em;
     text-align:left;
-    cursor:pointer;
+    margin-left:4px;
     margin-left:32px;
-}
-
-.modal-click:hover {
-    opacity: 0.6;
 }
 
 .modal-overlay {
@@ -313,7 +328,6 @@ ul li {
 }
 
 .return-text{
-    color:#60a1ac;
     margin-left:4px;
     margin-top:3px;
     text-transform: uppercase;
@@ -321,14 +335,6 @@ ul li {
     letter-spacing:1px;
     font-weight: 900;
     font-size: 0.8em;
-}
-
-a:hover {
-    opacity: 0.6;
-}
-
-router-link:hover {
-    opacity: 0.6;
 }
 
 </style>

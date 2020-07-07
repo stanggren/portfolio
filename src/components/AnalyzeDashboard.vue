@@ -4,38 +4,37 @@
             <div class="about-text">
                 <div>
                     <p class="menu-header">Analyze Dashboard</p>
-                    <p style="font-weight:500;">During my internship at <a style="text-decoration:none;color:#60a1ac;" href="https://www.visitgroup.com/">Visit Group</a> I got the opportunity to build a dashboard. I focused on developing the frontend which consumes data from a document database and displays it through charts and tables. Each chart and table is built as separate modules for the reason of reusing them as widgets on the Visit Group platform.</p>
+                    <p id="header">During my internship at <a class="link" href="https://www.visitgroup.com/">Visit Group</a> I got the opportunity to build a dashboard. </p>
+                    <p style="font-weight:500; margin-top:10px;">My main focus was on developing the frontend which consumes data from a document database and displays it through charts and tables. Each chart and table is built as separate modules for the reason of reusing them as widgets on the Visit Group platform.</p>
                     <p style="font-weight:500; margin-top:10px;">The dashboard also includes a datepicker where the user can set a desired timespan for the data to be displayed in. Re-rendering the data after given timespan does not require a pageload due to the separation of logic. Instead data is fetched asynchronous and thus rendered individually for each module.</p>
                     <p style="font-weight:500; margin-top:10px;">The analyze dashboard went in to production in December 2019 and is being used both by employees and customers of Visit Group.</p>
                     <p style="font-weight:500; margin-top:10px;">My time at Visit Group and working on this project has given me good insight in customer based development within an agile workflow.</p>
                     <p style="font-weight:500; margin-top:10px; font-style:oblique;">Reference is available.</p>
-                    <p @click="showModal = true" class="modal-click show-image" id="show-image" >Show image</p>
+                    <p @click="showModal = true" class="modal-click show-image link" id="show-image" >Show image</p>
                 </div>
                 <div class="link-container">
                     <p class="menu-header">Tools</p>
                     <ul class="tools">
-                        <li>C# (ASP.NET)</li>
-                        <li>Vue.JS (Vuex)</li>
-                        <li>GIT</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Elasticsearch</li>
-                        <li>Highcharts</li>
+                        <li style="margin-bottom:8px;">C# (ASP.NET)</li>
+                        <li style="margin-bottom:8px;">Vue.JS (Vuex)</li>
+                        <li style="margin-bottom:8px;">GIT</li>
+                        <li style="margin-bottom:8px;">HTML</li>
+                        <li style="margin-bottom:8px;">CSS</li>
+                        <li style="margin-bottom:8px;">Elasticsearch</li>
+                        <li >Highcharts</li>
                     </ul>
                 </div>
                 <div class="return-container">
-                    <router-link style="text-decoration:none; display:flex; flex-direction:row;" v-bind:to="'/about'">
+                    <router-link  style="text-decoration:none; display:flex; flex-direction:row;" v-bind:to="'/about'">
                         <img class="return-img" src="../assets/return.png">
-                        <p class="return-text">return</p>
+                        <p class="return-text link">return</p>
                     </router-link>
                 </div>
             </div>
         </div>
         <div class="content-container">
             <div><img src="../assets/dashboard-1.jpg" alt="Dashboard 1"></div>
-            <p @click="showModal = true" class="modal-click enlarge-image" >Enlarge image</p>
-            <!-- <div id="bottom"><img src="../assets/dashboard-dp.jpg" alt="Dashboard datepicker"></div>
-            <div id="top"><img src="../assets/dashboard-2.jpg" alt="Dashboard 2"></div> -->
+            <p @click="showModal = true" class="modal-click enlarge-image link" >Enlarge image</p>
         </div>
         <transition name="modalFade" appear>
             <div class="modal-overlay" v-if="showModal" @click="showModal = false"></div>
@@ -77,8 +76,7 @@ section {
 .menu-container {
     width: 100%;
     max-width: 40em;
-    max-height: 500px;
-    height:500px;
+    max-height: 700px;
     display: flex;
     padding: 0px;
 }
@@ -100,19 +98,23 @@ section {
 
 @media (max-width: 600px){
     .about-text{
-        padding-left: 20px;
-        max-width: 300px;
-        width:300px;
+        padding-left: 25px;
+        max-width: 320px;
+        width:320px;
     }
     section {
         justify-content: start;
         padding-top:20px;
-        min-height: 115vh;
-        height: 115vh;
+        min-height: 125vh;
+        height: 125vh;
     }
 
     .modal div img {
         height: 10em !important;
+    }
+
+    #header {
+        font-size: 1.2em!important;
     }
 }
 
@@ -145,6 +147,27 @@ section {
         height: 30em;
     }
 
+}
+
+#header {
+    font-weight:500; 
+    font-size: 1.5em;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(248,102,56);
+    font-weight: 600;
+    width: fit-content;
+    background-image: linear-gradient(180deg, transparent 90%, rgb(248,102,56) 0);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size .4s ease;
+}
+
+.link:hover {
+    background-size: 100% 100%;
+    cursor:pointer;
 }
 
 .menu-header {
@@ -191,7 +214,7 @@ section {
 }
 
 .activeLink {
-    color: #60a1ac;
+    color: rgb(248,102,56);
     font-weight: 600;
     opacity:1;
     height: auto;
@@ -205,11 +228,6 @@ section {
     font-weight: 600;
 }
 
-.title:hover{
-    cursor: pointer;
-    opacity: 0.6;
-    transition: all 0.1s ease-in;
-}
 
 .link-container {
     margin-top:20px;
@@ -251,19 +269,13 @@ ul li {
 }
 
 .modal-click {
-    color:#60a1ac;
     text-transform: uppercase;
     font-family: DejaVu;
     letter-spacing:1px;
     font-weight: 900;
-    font-size: 0.6em;
+    font-size: 0.8em;
     text-align:left;
-    cursor:pointer;
     margin-left:4px;
-}
-
-.modal-click:hover {
-    opacity: 0.6;
 }
 
 .modal-overlay {
@@ -323,7 +335,6 @@ ul li {
 }
 
 .return-text{
-    color:#60a1ac;
     margin-left:4px;
     margin-top:3px;
     text-transform: uppercase;
@@ -332,14 +343,5 @@ ul li {
     font-weight: 900;
     font-size: 0.8em;
 }
-
-a:hover {
-    opacity: 0.6;
-}
-
-router-link:hover {
-    opacity: 0.6;
-}
-
 
 </style>

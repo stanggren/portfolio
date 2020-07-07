@@ -8,7 +8,7 @@
             <span></span>
             <div class="svg_wrapper" id="enter">
                 <router-link style="text-decoration:none; color: #5a5c61;" v-bind:to="'/about'">
-                    <p>Click here to enter</p>
+                    <p class="link">Click here to enter</p>
                 </router-link>
             </div>
         </div>
@@ -84,5 +84,21 @@ svg {
     width: 29px;
     height: 29px;
 
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(248,102,56);
+    font-weight: 600;
+    width: fit-content;
+    background-image: linear-gradient(180deg, transparent 90%, rgb(248,102,56) 0);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size .4s ease;
+}
+
+.link:hover {
+    background-size: 100% 100%;
+    cursor:pointer;
 }
 </style>
