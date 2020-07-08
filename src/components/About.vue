@@ -3,6 +3,11 @@
         <div class="menu-container">
             <div class="about-text">
                 <div>
+                    <router-link class="logo-container" v-bind:to="'/'">
+                        <h1 id="A">A</h1>
+                        <h1 id="slash">/</h1>
+                        <h1 id="S">S</h1>
+                    </router-link>
                     <div class="header-container">
                         <p class="header">I'm Andreas Stanggren - </p>
                     </div>
@@ -31,10 +36,11 @@
                         <p style="margin-bottom:8px;">JavaScript</p>
                         <p style="margin-bottom:8px;">Vue.JS</p>
                         <p style="margin-bottom:8px;">React.JS</p>
-                        <p style="margin-bottom:8px;">HTML</p>
-                        <p style="margin-bottom:8px;">CSS</p>
+                        <p style="margin-bottom:8px;">HTML5</p>
+                        <p style="margin-bottom:8px;">CSS3</p>
                         <p style="margin-bottom:8px;">C#</p>
                         <p style="margin-bottom:8px;">ASP .NET</p>
+                        <p style="margin-bottom:8px;">REST</p>
                         <p style="margin-bottom:8px;">GIT</p>
                         <p>Agile workflow</p>
                     </div>
@@ -44,7 +50,7 @@
                     <div class="skills">
                         <a style="margin-bottom:8px;" href="https://github.com/stanggren">GitHub</a>
                         <a style="margin-bottom:8px;" href="https://www.linkedin.com/in/andreas-stanggren-6a27a8176/">LinkedIn</a>
-                        <a style="margin-bottom:8px;" @click="showModal = true">CV</a>
+                        <a style="margin-bottom:8px;cursor:pointer" @click="showModal = true">CV</a>
                         <p>astanggren@gmail.com</p>
                     </div>
                 </div>
@@ -110,7 +116,8 @@ section {
 .menu-container {
     width: 100%;
     max-width: 40em;
-    max-height: 700px;
+    max-height: 820px;
+    height: 820px;
     display: flex;
     padding: 0px;
 }
@@ -122,6 +129,40 @@ section {
     flex-direction: column;
     text-align: left;
     padding-left:5px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5em;
+    font-family: ballinger-mono, sans-serif;
+    color: rgb(248,102,56);
+    width:fit-content;
+    text-decoration: none;
+    width:fit-content;
+
+    background-image: linear-gradient(180deg, transparent 95%, rgb(248,102,56) 0);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size .4s ease;
+}
+
+.logo-container:hover {
+    background-size: 100% 100%;
+}
+
+#A, #S {
+    font-weight: 300;
+    
+
+}
+
+#slash {
+    font-weight: 500;
+    font-size:1.1em;
+    margin-right:2px;
+    margin-left:4px;
+    margin-top:4px;
 }
 
 .header-container {
@@ -185,7 +226,7 @@ section {
     }
 
     #about-section {
-        height:148vh!important;
+        height:153vh!important;
         justify-content:flex-end;
     }
 
@@ -205,6 +246,26 @@ section {
         padding-top:40px;
     }
 
+    .logo-container{
+        margin-bottom:5px!important;
+    }
+
+    #A {
+        font-size: 1em;
+    }
+
+    #S {
+        font-size: 1em;
+    }
+
+    #slash {
+    font-weight: 500;
+    font-size:0.73em;
+    margin-right:2px;
+    margin-left:4px;
+    margin-top:2px;
+    }
+
 }
 
 @media (max-width: 1024px){
@@ -220,7 +281,7 @@ section {
 
     section {
         flex-direction: column-reverse;
-        height:130.5vh;
+        height:135vh;
     }
 
     .aboutImage {
