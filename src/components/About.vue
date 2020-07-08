@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="content-container">
-            <div ><img id="phoneImage" class="aboutImage" src="../assets/leaf2.png" alt="leaf"></div>
+            <div ><img rel="preload" id="phoneImage" class="aboutImage" src="../assets/leaf2.png" alt="leaf"></div>
         </div>
         <transition name="modalFade" appear>
             <div class="modal-overlay" v-if="showModal" @click="showModal = false"></div>

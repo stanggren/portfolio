@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="content-container">
-            <div><img src="../assets/dashboard-1.jpg" alt="Dashboard 1"></div>
+            <div><img rel="preload" src="../assets/dashboard-1.jpg" alt="Dashboard 1"></div>
             <p @click="showModal = true" class="modal-click enlarge-image link" >Enlarge image</p>
         </div>
         <transition name="modalFade" appear>
