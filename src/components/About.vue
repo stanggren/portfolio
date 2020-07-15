@@ -396,7 +396,7 @@ section {
   }
 
   #about-section {
-    height: 150vh !important;
+    height: 155vh !important;
     justify-content: flex-end;
   }
 
