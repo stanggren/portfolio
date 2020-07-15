@@ -126,8 +126,8 @@ section {
   section {
     justify-content: start;
     padding-top: 20px;
-    min-height: 135vh;
-    height: 135vh;
+    min-height: 137vh;
+    height: 137vh;
   }
 
   .modal div img {
