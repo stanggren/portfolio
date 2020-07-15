@@ -8,9 +8,7 @@
             <h1 id="slash">/</h1>
             <h1 id="S">S</h1>
           </router-link>
-          <div class="header-container">
-            <p class="header">I'm Andreas Stanggren -</p>
-          </div>
+          <p class="header">I'm Andreas Stanggren -</p>
           <p
             class="sub-header"
           >A Gothenburg based web developer with main passion in design and neat user interfaces.</p>
@@ -71,8 +69,102 @@
       </div>
     </div>
     <div class="content-container">
-      <div>
-        <img rel="preload" id="phoneImage" class="aboutImage" src="../assets/leaf2.png" alt="leaf" />
+      <div class="svg-container">
+        <svg
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 600 600"
+          style="enable-background:new 0 0 600 600;"
+          xml:space="preserve"
+        >
+          <path style="fill:none;stroke:none;stroke-miterlimit:10;" d="M5.5,624.5" />
+          <g>
+            <path class="path"
+              style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+              d="M132.573,587.123
+		c74.659-162.667,139.986-179.662,222.811-281.633S481.372,42.066,481.372,42.066"
+            />
+          </g>
+          <path class="path leaf4-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M435.436,275.735
+	c-11.103,12.398,2.77,40.463,27.391,61.042s59.797,3.085,59.797,3.085"
+          />
+          <path class="path leaf4-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M435.436,275.735
+	c7.081-8.177,37.82-9.483,63.365,9.937c25.466,19.36,21.629,53.758,21.463,56.915"
+          />
+          <path class="path line4-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M405.144,230.775
+	c17.28,50.611,30.46,44.499,30.46,44.499"
+          />
+          <path class="path leaf2-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M267.951,471.842
+	c-12.335,11.174-1.461,40.531,20.881,63.564c22.342,23.033,59.15,9.3,59.15,9.3"
+          />
+          <path class="path leaf2-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M267.951,471.842
+	c7.894-7.395,38.603-5.49,61.984,16.486c23.31,21.908,15.91,55.719,15.415,58.842"
+          />
+          <path class="path line2-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M242.509,423.97
+	c11.912,52.137,25.657,47.43,25.657,47.43"
+          />
+          <path class="path leaf5-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M415.44,99.332
+	c11.408-12.118-1.762-40.519-25.862-61.705s-59.702-4.573-59.702-4.573"
+          />
+          <path class="path leaf5-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M415.44,99.332
+	c-7.282,7.998-38.045,8.538-63.098-11.512c-24.976-19.988-20.284-54.279-20.039-57.432"
+          />
+          <path class="path line5-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M444.604,145.032
+	c-16.015-51.026-29.342-45.243-29.342-45.243"
+          />
+          <path class="path leaf3-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M300.39,293.887
+	c12.902-10.514,3.578-40.399-17.529-64.568c-21.107-24.169-58.583-12.379-58.583-12.379"
+          />
+          <path class="path leaf3-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M300.39,293.887
+	c-8.27,6.972-38.837,3.465-61.038-19.704c-22.133-23.097-12.975-56.474-12.318-59.567"
+          />
+          <path class="path line3-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M323.294,343.023
+	c-9.17-52.688-23.142-48.707-23.142-48.707"
+          />
+          <path class="path leaf1-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M134.519,481.989
+	c12.131-11.395,0.729-40.551-22.025-63.176s-59.309-8.23-59.309-8.23"
+          />
+          <path class="path leaf1-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M134.519,481.989
+	c-7.759,7.536-38.497,6.186-62.272-15.364c-23.702-21.484-16.913-55.422-16.475-58.554"
+          />
+          <path class="path line1-delay"
+            style="fill:none;stroke:#313335;stroke-width:8;stroke-miterlimit:10;"
+            d="M160.822,529.393
+	c-12.852-51.913-26.509-46.959-26.509-46.959"
+          />
+        </svg>
       </div>
     </div>
     <transition name="modalFade" appear>
@@ -219,10 +311,6 @@ section {
 }
 
 .header-container {
-  width: fit-content;
-  padding: 5px 5px 5px 5px;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
   animation-iteration-count: 1;
   background-image: linear-gradient(180deg, transparent 10%, #3f4042 0);
   background-repeat: no-repeat;
@@ -245,7 +333,14 @@ section {
   );
   background-size: 200% 100%;
   background-position: 0%;
-  animation: header-text-color-change 2s;
+  animation: header-text-color-change 2s 4.5s, header-hide 0s 4.5s forwards;
+  visibility: hidden;
+}
+
+@keyframes header-hide {
+  to {
+    visibility: visible;
+  }
 }
 
 @keyframes header-text-color-change {
@@ -269,6 +364,21 @@ section {
 .sub-header {
   font-weight: 500;
   font-size: 1.4em;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #313335,
+    #313335 50%,
+    transparent 50%
+  );
+  background-size: 200% 100%;
+  background-position: 0%;
+  animation: header-text-color-change 1.5s 5.5s, header-hide 0s 5.5s forwards;
+  visibility: hidden;
+
 }
 
 @media (max-width: 1400px) {
@@ -286,7 +396,7 @@ section {
   }
 
   #about-section {
-    height: 153vh !important;
+    height: 145vh !important;
     justify-content: flex-end;
   }
 
@@ -347,6 +457,11 @@ section {
     padding-bottom: 40px;
     width: 300px !important;
   }
+
+  .svg-container {
+  width: 320px!important;
+  height: 320px!important;
+}
 }
 
 ul li {
@@ -493,9 +608,9 @@ ul li {
 }
 
 .content-container {
-  width: 100%;
+  /* width: 100%;
   max-width: 40em;
-  padding: 0px;
+  padding: 0px; */
 }
 
 .aboutImage {
@@ -544,5 +659,55 @@ ul li {
 .modalSlide-enter,
 .modalSlide-leave-to {
   transform: translate(-50%) translateX(100vw);
+}
+
+.svg-container {
+  width: 640px;
+  height: 640px;
+}
+
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.line1-delay {
+  animation-delay: 0.6s;
+}
+.line2-delay {
+  animation-delay: 1.1s;
+}
+.line3-delay {
+  animation-delay: 1.6s;
+}
+.line4-delay {
+  animation-delay: 2.3s;
+}
+.line5-delay {
+  animation-delay: 2.7s;
+}
+
+.leaf1-delay {
+  animation-delay: 0.9s;
+}
+.leaf2-delay {
+  animation-delay: 1.4s;
+}
+.leaf3-delay {
+  animation-delay: 1.9s;
+}
+.leaf4-delay {
+  animation-delay: 2.6s;
+}
+.leaf5-delay {
+  animation-delay: 3s;
 }
 </style>
