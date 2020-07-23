@@ -12,7 +12,7 @@
       <span></span>
       <div class="svg_wrapper" id="enter">
         <router-link style="text-decoration:none; color: #5a5c61;" v-bind:to="'/about'">
-          <p id="click" class="hide-color link">Click here to enter</p>
+          <p id="click" class="hide-color link">Enter here</p>
         </router-link>
       </div>
     </div>
@@ -138,7 +138,7 @@ p {
 
 #click {
   border-right: 0.15em solid rgb(248, 102, 56);
-  animation: typing 3.1s steps(40, end),
+  animation: typing 1.2s steps(13, end),
     blink-caret-click 0.75s step-end infinite, colorHide 0s 3.8s forwards;
   animation-delay: 5.5s;
   visibility: hidden;

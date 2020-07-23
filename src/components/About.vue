@@ -11,7 +11,7 @@
           <p class="header">I'm Andreas Stanggren -</p>
           <p
             class="sub-header"
-          >A Gothenburg based web developer with main passion in design and neat user interfaces.</p>
+          >A Gothenburg based web developer with a passion in design and neat user interfaces.</p>
         </div>
         <div class="link-container">
           <p class="menu-header">Projects</p>

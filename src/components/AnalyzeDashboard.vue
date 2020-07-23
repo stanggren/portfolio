@@ -10,7 +10,7 @@
           </p>
           <p
             style="font-weight:500; margin-top:10px;"
-          >My main focus was on developing the frontend which consumes data from a document database and displays it through charts and tables. Each chart and table is built as separate modules for the reason of reusing them as widgets on the Visit Group platform.</p>
+          >I focused on developing the frontend which consumes data from a document database and displays it through charts and tables. Each chart and table is built as separate modules for the reason of reusing them as widgets on the Visit Group platform.</p>
           <p
             style="font-weight:500; margin-top:10px;"
           >The dashboard also includes a datepicker where the user can set a desired timespan for the data to be displayed in. Re-rendering the data after given timespan does not require a pageload due to the separation of logic. Instead data is fetched asynchronous and thus rendered individually for each module.</p>
