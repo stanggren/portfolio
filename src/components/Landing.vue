@@ -10,8 +10,8 @@
         <p id="sub-header">A portfolio by Andreas Stanggren</p>
       </div>
       <span></span>
-      <div class="svg_wrapper" id="enter">
-        <router-link style="text-decoration:none; color: #5a5c61;" v-bind:to="'/about'">
+      <div class="enter_wrapper" id="enter">
+        <router-link style="text-decoration:none;color: #5a5c61;" v-bind:to="'/about'">
           <p id="click" class="hide-color link">Enter here</p>
         </router-link>
       </div>
@@ -25,17 +25,80 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+$colors: (
+  bg: #f4f3f2,
+  link: rgb(248, 102, 56)
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+@function borderRight($color) {
+  @return 0.15em solid $color;
+}
+
+@mixin opacityKeyFrames {
+  @keyframes anim-hide {
+    to {
+      visibility: visible;
+    }
+  }
+
+  @keyframes anim-opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin textKeyFrames {
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: color(link);
+    }
+  }
+}
+
 * {
   margin-block-start: 0px;
   margin-block-end: 0px;
 }
+
 section {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+
+  p {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-family: DejaVu;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+  }
 }
 
 .header-container {
@@ -44,144 +107,44 @@ section {
   align-items: center;
   justify-content: center;
   margin-bottom: -20px;
-}
 
-#A {
-  animation: A-opacity 2s 3.8s, A-hide 0s 3.8s forwards;
-  visibility: hidden;
-}
-
-@keyframes A-hide {
-  to {
-    visibility: visible;
+  h1 {
+    font-size: 8em;
+    height: 158px;
+    font-family: ballinger-mono, sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
-}
 
-@keyframes A-opacity {
-  from {
-    opacity: 0;
+  #A {
+    animation: anim-opacity 2s 3.8s, anim-hide 0s 3.8s forwards;
+    visibility: hidden;
   }
-  to {
-    opacity: 1;
+
+  #slash {
+    font-size: 5.8em;
+    font-weight: 500;
+    margin-top: 32px;
+    margin-right: 4px;
+    margin-left: 16px;
+    animation: anim-opacity 2s 3.9s, anim-hide 0s 3.9s forwards;
+    visibility: hidden;
   }
-}
 
-#slash {
-  font-size: 5.8em;
-  font-weight: 500;
-  margin-top: 32px;
-  margin-right: 4px;
-  margin-left: 16px;
-  animation: slash-opacity 2s 3.9s, slash-hide 0s 3.9s forwards;
-  visibility: hidden;
-}
-
-@keyframes slash-hide {
-  to {
-    visibility: visible;
+  #S {
+    animation: anim-opacity 2s 4s, anim-hide 0s 4s forwards;
+    visibility: hidden;
   }
-}
 
-@keyframes slash-opacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-#S {
-  animation: S-opacity 2s 4s, S-hide 0s 4s forwards;
-  visibility: hidden;
-}
-
-@keyframes S-hide {
-  to {
-    visibility: visible;
-  }
-}
-
-@keyframes S-opacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-h1 {
-  font-size: 8em;
-  height: 158px;
-  font-family: ballinger-mono, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-p {
-  text-transform: uppercase;
-  font-size: 0.9em;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  font-family: DejaVu;
-
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 0 auto;
+  @include opacityKeyFrames;
 }
 
 #sub-header {
   border-right: 0.15em solid transparent;
-  animation: typing 3.6s steps(40, end), blink-caret-header 0.75s step-end 7.5;
+  animation: typing 3.6s steps(40, end), blink-caret 0.75s step-end 7.5;
 }
 
-#click {
-  border-right: 0.15em solid rgb(248, 102, 56);
-  animation: typing 1.2s steps(13, end),
-    blink-caret-click 0.75s step-end infinite, colorHide 0s 3.8s forwards;
-  animation-delay: 5.5s;
-  visibility: hidden;
-}
-
-#click:hover {
-  border-right: 0.15em solid #f4f3f2 !important;
-}
-
-@keyframes colorHide {
-  to {
-    visibility: visible;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret-header {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: rgb(248, 102, 56);
-  }
-}
-
-@keyframes blink-caret-click {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: rgb(248, 102, 56);
-  }
-}
+@include textKeyFrames;
 
 span {
   border-style: solid;
@@ -191,65 +154,57 @@ span {
   align-self: center;
   margin-right: 2px;
   opacity: 1;
-  animation: span-opacity 3s 4.5s, span-hide 0s 4.5s forwards;
+  animation: anim-opacity 3s 4.5s, anim-hide 0s 4.5s forwards;
   visibility: hidden;
+
+  @include opacityKeyFrames;
 }
 
-@keyframes span-opacity {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes span-hide {
-  to {
-    visibility: visible;
-  }
-}
-
-#enter {
+.enter_wrapper {
+  width: 29px;
+  height: 29px;
   justify-self: baseline;
   align-self: center;
   bottom: 2%;
   width: fit-content;
   position: absolute;
-}
 
-.svg_wrapper p {
-  text-decoration: none;
-  font-size: 0.8em;
-}
+  p {
+    text-decoration: none;
+    font-size: 0.8em;
+  }
 
-.svg_wrapper {
-  width: 29px;
-  height: 29px;
-}
+  .link {
+    text-decoration: none;
+    color: color(link);
+    font-weight: 600;
+    width: fit-content;
+    background-image: linear-gradient(180deg, transparent 90%, color(link) 0);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size 0.4s ease;
+    &:hover {
+      background-size: 100% 100%;
+      cursor: pointer;
+    }
+  }
 
-svg {
-  width: 29px;
-  height: 29px;
-}
+  #click {
+    border-right: borderRight(color(link));
+    animation: typing 1.2s steps(13, end), blink-caret 0.75s step-end infinite,
+      colorHide 0s 3.8s forwards;
+    animation-delay: 5.5s;
+    visibility: hidden;
+    &:hover {
+      border-right: borderRight(color(bg)) !important;
+    }
+  }
 
-.link {
-  text-decoration: none;
-  color: rgb(248, 102, 56);
-  font-weight: 600;
-  width: fit-content;
-  background-image: linear-gradient(
-    180deg,
-    transparent 90%,
-    rgb(248, 102, 56) 0
-  );
-  background-repeat: no-repeat;
-  background-size: 0 100%;
-  transition: background-size 0.4s ease;
-}
-
-.link:hover {
-  background-size: 100% 100%;
-  cursor: pointer;
+  @keyframes colorHide {
+    to {
+      visibility: visible;
+    }
+  }
+  @include textKeyFrames;
 }
 </style>

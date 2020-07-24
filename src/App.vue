@@ -41,7 +41,6 @@ export default {
 <style>
 @import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
 
-
 @font-face {
     src: url(assets/DejaVuSansMono.ttf);
     font-family: DejaVu;

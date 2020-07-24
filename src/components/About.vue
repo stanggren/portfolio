@@ -46,7 +46,7 @@
             <p style="margin-bottom:8px;">Vue.JS</p>
             <p style="margin-bottom:8px;">React.JS</p>
             <p style="margin-bottom:8px;">HTML5</p>
-            <p style="margin-bottom:8px;">CSS3</p>
+            <p style="margin-bottom:8px;">CSS3, Sass</p>
             <p style="margin-bottom:8px;">C#</p>
             <p style="margin-bottom:8px;">ASP .NET</p>
             <p style="margin-bottom:8px;">REST</p>
